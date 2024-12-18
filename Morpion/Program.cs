@@ -96,7 +96,7 @@ namespace Morpion // nom du truc
 
 
 
-                    Console.WriteLine(" -----------"); // met -----------
+                    Console.WriteLine("-----------"); // met -----------
             }
         }
 
@@ -268,8 +268,35 @@ namespace Morpion // nom du truc
                 }
             }
 
+            
+
+            if (grille[2, 3] == joueur)
+            {
+                return true;
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
             return false; // Retourne faux si aucun joueur n'a gagné
+
         }
+
+
+
+
+
+
+
 
 
         // Point d'entrée du programme principal
@@ -283,7 +310,8 @@ namespace Morpion // nom du truc
             int joueur = 1; // declare le joueur actuel (1 ou 2)
             int essais = 0; // compte nombre coups jouer
             bool gagner = false; // indique si joueur gagner
-            int l, c; // cordonnees du coup, la grille 
+            int c;  // cordonnees du coup, la grille 
+            int l; // cordonnees du coup, la grille 
 
 
 
@@ -321,38 +349,78 @@ namespace Morpion // nom du truc
             while (!gagner && essais < 9) // sa continue tant que le nombre d'eesssaie n'est pas finit et que persone a win 
                 //&& permet de mettre 2 condition dans while , il peut marcher avec un if ou d'autre structure logique 
             {
+                
                 AfficherMorpion(); // affiche la grille ( avec les truc en dessous)
 
-                Console.WriteLine($"C'est au tour du joueur {joueur}");
+                Console.WriteLine($"  C'est au tour du joueur {joueur}");
                 // indique de joueur 
                 //$ : ce carctére permet de dire que {joueur} est une varriable qui peut etre modifier (dans cette situation c pr dire joueur 1 ou 2
                 //{joueur} : met la varriable joueur dans le texte afficher, sa met la varriable joueur donc soit joueur 1 ou joueur 2 ( si win de l'un d'entre eu)
                 //"le joueur .... gagne" : les caractére entre le nom du joueur qui a win ( sa met le 'nom' du joueur qui a win dans le champ)
+            
+
+
+                Console.WriteLine("  Colone de 1 a 3");
+                Console.Write("  = ");
+                c = int.Parse(Console.ReadLine()) - 1;
+                
+                
+
+
+                Console.WriteLine("  Ligne de 1 a 3");
+                Console.Write("  = ");
+                l = int.Parse(Console.ReadLine()) - 1;
 
 
 
-                Console.Write("Ligne de 1 a 3 : "); // quelle ligne ? 
-                l = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2, 
 
-                Console.Write("Colonne de 1 a 3 : "); // quelle colone ? 
-                c = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur , fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2
+                // Console.Write("Colonne de 1 a 3 ="); // quelle colone ? 
+                // c = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2, 
+
+                //  Console.WriteLine("Ligne de 1 a 3 = "); // quelle ligne ? 
+                //  l = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur , fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2
                 //
                 //
                 //
-
-
-
                 //l : ligne 
                 //c : colone 
 
 
 
-                if (AJouer(l, c, joueur)) // si l'entré utilisateur est bonne , il ajoute et fait ce qu'il y a en dessous
+
+                
+                //(l < || l > 2 || c < 0 || c > 2 || grille[l, c] != 0)
+               // if (l == 4)
+                    
+                  //      { return; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    if (AJouer(l, c, joueur)) // si l'entré utilisateur est bonne , il ajoute et fait ce qu'il y a en dessous
                 {
 
 
 
                     essais++; // augmente le compteur de coups ( rajoute a la varriable essais)
+                   
+                    Console.WriteLine($"le nombre de tour et de {essais} ");
+                    //revoir*
+
+
+
                     if (Gagner(joueur)) // regarde si joueur a win ( avec la variable Gagner) ( joueur : 1 ou 2) et fait ce qu'il y a en dessous
                     {
                         AfficherMorpion(); //affiche   grille fina
