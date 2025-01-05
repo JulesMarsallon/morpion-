@@ -2,7 +2,11 @@
 
 using System;
 
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
 //i : sert a bouger dans le tableau , il permet de changer le nombre (1,2 ou " ") a chaque passager utilisateur 
 //i c donc les ligne 
 
@@ -66,7 +70,11 @@ namespace Morpion // nom du truc
                                                 // if ( si la case correspond a 2 , faire se qu'il ya en dessous
                                                 // si la case est 2 cela veut donc dire que c le joueur X qui a mis sont signe, si c 1 c le joueur O qui a mis
                                                 //sont signe , et 0 ya rien 
+<<<<<<< HEAD
 
+=======
+                       
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
                         Console.Write(" X "); // c le joueur 2
 
 
@@ -268,14 +276,24 @@ namespace Morpion // nom du truc
                 }
             }
 
+<<<<<<< HEAD
 
 
             /*if (grille[2, 3] == joueur)
+=======
+            
+
+            if (grille[2, 3] == joueur)
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
             {
                 return true;
 
             }
+<<<<<<< HEAD
             */
+=======
+
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
 
 
 
@@ -337,19 +355,32 @@ namespace Morpion // nom du truc
 
 
                     grille[i, j] = 0; //met la valleur de la grille ( les case vide ) a 0, assigne une valeur dans les élément de la matrioce
+<<<<<<< HEAD
                                       //grille : la grille 3*3
                                       //[i, j] :ligne et colonnes de matrice
                                       //=0 on met 0 au coordonnée donné 
                                       //ce truc permet a la martrice d'avoir des info deja mise dans la grille , pour pouvoir l'initialisé 
+=======
+                                       //grille : la grille 3*3
+                                       //[i, j] :ligne et colonnes de matrice
+                                       //=0 on met 0 au coordonnée donné 
+                                       //ce truc permet a la martrice d'avoir des info deja mise dans la grille , pour pouvoir l'initialisé 
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
 
 
 
 
 
             while (!gagner && essais < 9) // sa continue tant que le nombre d'eesssaie n'est pas finit et que persone a win 
+<<<<<<< HEAD
                                           //&& permet de mettre 2 condition dans while , il peut marcher avec un if ou d'autre structure logique 
             {
 
+=======
+                //&& permet de mettre 2 condition dans while , il peut marcher avec un if ou d'autre structure logique 
+            {
+                
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
                 AfficherMorpion(); // affiche la grille ( avec les truc en dessous)
 
                 Console.WriteLine($"  C'est au tour du joueur {joueur}");
@@ -357,19 +388,33 @@ namespace Morpion // nom du truc
                 //$ : ce carctére permet de dire que {joueur} est une varriable qui peut etre modifier (dans cette situation c pr dire joueur 1 ou 2
                 //{joueur} : met la varriable joueur dans le texte afficher, sa met la varriable joueur donc soit joueur 1 ou joueur 2 ( si win de l'un d'entre eu)
                 //"le joueur .... gagne" : les caractére entre le nom du joueur qui a win ( sa met le 'nom' du joueur qui a win dans le champ)
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
 
 
                 Console.WriteLine("  Colone de 1 a 3");
                 Console.Write("  = ");
+<<<<<<< HEAD
                 c = int.Parse(Console.ReadLine()) -1 ;
 
 
+=======
+                c = int.Parse(Console.ReadLine()) - 1;
+                
+                
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
 
 
                 Console.WriteLine("  Ligne de 1 a 3");
                 Console.Write("  = ");
+<<<<<<< HEAD
                 l = int.Parse(Console.ReadLine()) -1;
+=======
+                l = int.Parse(Console.ReadLine()) - 1;
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
 
 
 
@@ -388,11 +433,19 @@ namespace Morpion // nom du truc
 
 
 
+<<<<<<< HEAD
 
                 //(l < || l > 2 || c < 0 || c > 2 || grille[l, c] != 0)
                 // if (l == 4)
 
                 //      { return; }
+=======
+                
+                //(l < || l > 2 || c < 0 || c > 2 || grille[l, c] != 0)
+               // if (l == 4)
+                    
+                  //      { return; }
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
 
 
 
@@ -409,13 +462,21 @@ namespace Morpion // nom du truc
 
 
 
+<<<<<<< HEAD
                 if (AJouer(l, c, joueur)) // si l'entré utilisateur est bonne , il ajoute et fait ce qu'il y a en dessous
+=======
+                    if (AJouer(l, c, joueur)) // si l'entré utilisateur est bonne , il ajoute et fait ce qu'il y a en dessous
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
                 {
 
 
 
                     essais++; // augmente le compteur de coups ( rajoute a la varriable essais)
+<<<<<<< HEAD
 
+=======
+                   
+>>>>>>> 3be5475dfaa9fb011bfb696df3b8da1c39955665
                     Console.WriteLine($"le nombre de tour et de {essais} ");
                     //revoir*
 
