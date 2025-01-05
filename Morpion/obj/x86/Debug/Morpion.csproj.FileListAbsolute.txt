@@ -56,3 +56,10 @@ D:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.csproj.AssemblyRef
 D:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.csproj.CoreCompileInputs.cache
 D:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.exe
 D:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.pdb
+E:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\bin\Debug\Morpion.exe.config
+E:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\bin\Debug\Morpion.exe
+E:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\bin\Debug\Morpion.pdb
+E:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.csproj.AssemblyReference.cache
+E:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.csproj.CoreCompileInputs.cache
+E:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.exe
+E:\Ap 3 c# Jeux\Morpion\Morpion\Morpion\obj\x86\Debug\Morpion.pdb
