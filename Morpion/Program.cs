@@ -214,7 +214,7 @@ namespace Morpion // nom du truc
                                         // Boucle, int i = 0 (initialise varibale i a 0),
                                         // i < 3 (c la condition pour que la boucle continue, tant que 1 est plus petit que 3 la boucle continue 
                                         // i++ ajouter 1 a i
-                                        //Pour résumer quand i atteint 3 la boucle se stop 
+                                        //Pour résumer quand i atteint 3 la boucle se stop +65
             {
                 if (grille[0, j] == joueur)
                 {
