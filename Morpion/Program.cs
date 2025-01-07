@@ -224,7 +224,7 @@ namespace Morpion // nom du truc
 
 
                         {
-                            return true;
+                            return true; // Return true
 
 
                         }
