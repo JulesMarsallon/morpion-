@@ -200,7 +200,7 @@ namespace Morpion // nom du truc
 
                         {
                             return true;
-                            //si tt les condition au dessu sont vrai (case ligne i et colone 0.1.2 sont identique alors win ) donc true
+                            //si tt les condition au dessu sont vrai (case ligne i et colone 0.1.2 sont identique alors win ) donc true. 
                         }
                     }
                 }
@@ -214,7 +214,7 @@ namespace Morpion // nom du truc
                                         // Boucle, int i = 0 (initialise varibale i a 0),
                                         // i < 3 (c la condition pour que la boucle continue, tant que 1 est plus petit que 3 la boucle continue 
                                         // i++ ajouter 1 a i
-                                        //Pour résumer quand i atteint 3 la boucle se stop +65
+                                        //Pour résumer quand i atteint 3 la boucle se stop 
             {
                 if (grille[0, j] == joueur)
                 {
