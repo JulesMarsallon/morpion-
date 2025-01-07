@@ -220,7 +220,7 @@ namespace Morpion // nom du truc
                 {
                     if (grille[1, j] == joueur)
                     {
-                        if (grille[2, j] == joueur)
+                        if (grille[2, j] == joueur) // test grille
 
 
                         {
