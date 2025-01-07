@@ -29,6 +29,10 @@ namespace Morpion // nom du truc
         public static void AfficherMorpion()
         {
             Console.Clear(); // Efface la console , en gros sa permet d'avoir un truc "neuf"
+            Console.WriteLine("Joueur 1 = O");  //information joueur
+            Console.WriteLine("Joueur 2 = X");  //information joueur
+            Console.WriteLine("            ");
+            Console.WriteLine(" -----------");  //j'ai mis cette ligne ici car pour une raison inconue je ne peut pas mettre 4 ligne dans le if j ci dessous. 
             for (int i = 0; i < 3; i++) // Boucle, int i = 0 (initialise varibale i a 0),
                                         // i < 3 (c la condition pour que la boucle continue, tant que 1 est plus petit que 3 la boucle continue 
                                         // i++ ajouter 1 a i
@@ -55,6 +59,7 @@ namespace Morpion // nom du truc
                                            // if ( si la case correspond a 1 , faire se qu'il ya en dessous
                                            // si la case est 1 cela veut donc dire que c le joueur O qui a mis sont signe, si c 2 c le joueur X qui a mis
                                            //sont signe , et 0 ya rien 
+                        
                         Console.Write(" O "); //c le joueur 1
 
 
@@ -69,22 +74,24 @@ namespace Morpion // nom du truc
                                                 // si la case est 2 cela veut donc dire que c le joueur X qui a mis sont signe, si c 1 c le joueur O qui a mis
                                                 //sont signe , et 0 ya rien 
 
+                        
                         Console.Write(" X "); // c le joueur 2
 
 
 
 
                     else // Sinon, laisse la case vide
-                        Console.Write("   "); //et donc sa marque rien qui mis comme un espace ( qui vaut 0 de base) le rien vaut 0
+                     Console.Write("   "); //et donc sa marque rien qui mis comme un espace ( qui vaut 0 de base) le rien vaut 0 donc le tableau de base est : 0 0 0 
+                     //                                                                                                                                        0 0 0
+                     //                                                                                                                                        0 0 0
 
 
 
 
 
-                    if (j < 4) // barre verticale entre colonne 
+                    if (j < 3) // barre verticale entre colonne 
                                // j (la colone du truc au dessu)
-                               // < 2 (vérif que j est avant la derniére colone qui sont elle de 0 a2, donc il vérif que l'on est soit dans la 0 soit dans la 2
-                               // < 4 (vérif que j est avant la derniére colone qui sont elle de 0 a2, donc il vérif que l'on est soit dans la 0 soit dans la 2
+                               // < 3 (vérif que j est avant la derniére colone qui sont elle de 0 a2, donc il vérif que l'on est soit dans la 0 soit dans la 2
                                // si condition vérifier , passe en dessou
                         Console.Write("|"); //met | 
 
@@ -95,14 +102,13 @@ namespace Morpion // nom du truc
                 }
                 Console.WriteLine(); //ligne d'aprés
 
-                if (i < 4) // barre horrizontale 
+                if (i < 3) // barre horrizontale 
                            // i (la ligne du truc au dessu)
-                           // < 2 (vérif que i est avant la derniére colone qui sont elle de 0 a2, donc il vérif que l'on est soit dans la 0 soit dans la 2
-                           // < 4 (vérif que i est avant la derniére colone qui sont elle de 0 a2, donc il vérif que l'on est soit dans la 0 soit dans la 2
+                           // < 3 (vérif que i est avant la derniére colone qui sont elle de 0 a2, donc il vérif que l'on est soit dans la 0 soit dans la 2
                            // si condition vérifier , passe en dessou
 
 
-
+                    
 
                     Console.WriteLine(" -----------"); // met -----------
             }
@@ -126,20 +132,25 @@ namespace Morpion // nom du truc
 
 
         {
-            if (l < 0 || l > 2 || c < 0 || c > 2 || grille[l, c] != 0) // Vérifie si la case est valide et vide
-                                                                       // l < 0 : vérif si ligne choisit par le joueur et inférieur a 0 , si oui invalid car hors grille 
-                                                                       // l > 2 : vérif si ligne choisit par le joueur et supérieur a 2 , si oui invalid car hors grille 
-                                                                       // c < 0 : vérif si la cologne choisit par le jouures est inférieur a 0 , si oui invalid car hors grille 
-                                                                       // c > 2 : vérif si la cologne choisit par le joueur est supérieurs a 2 , si oui invalid car hors grille 
-                                                                       // grille[l, c] != 10 : vérif si la case indiqué ne contient pas 10 ( 10 étant la valeur d'une case vide), si case na pas 10 sa veut dire quelle et prise
-                                                                       // grille[l, c] != 0 : vérif si la case indiqué ne contient pas 0 ( 0 étant la valeur d'une case vide), si case na pas 0 sa veut dire quelle et prise
-                                                                       // || : c un opérareur bool, c un moyen de dire que si un de ces truc est vrai hop invalid
+            if (l < 0 || l > 2 || c < 0 || c > 2 || grille[l, c] != 0)  // ce if permet de vérifier tout les condition en meme temps
+                
+                
+                // Vérifie si la case est valide et vide                                                     
+                // l < 0 : vérif si ligne choisit par le joueur et inférieur a 0 , si oui invalid car hors grille                                                       
+                // l > 2 : vérif si ligne choisit par le joueur et supérieur a 2 , si oui invalid car hors grille                                                      
+                // c < 0 : vérif si la cologne choisit par le jouures est inférieur a 0 , si oui invalid car hors grille                                                      
+                // c > 2 : vérif si la cologne choisit par le joueur est supérieurs a 2 , si oui invalid car hors grille                                                    
+                // grille[l, c] != 10 : vérif si la case indiqué ne contient pas 10 ( 10 étant la valeur d'une case vide), si case na pas 10 sa veut dire quelle et prise                                                    
+                // grille[l, c] != 0 : vérif si la case indiqué ne contient pas 0 ( 0 étant la valeur d'une case vide), si case na pas 0 sa veut dire quelle et prise                                                    
+                // || : c un opérareur bool, c un moyen de dire que si un de ces truc est vrai hop invalid
 
+                //* la grille et de 0 a 2 , non pas de 1 a 3 , c'est pourquoi je vérif inférieur a 0 et supérieur a 2 etc 
 
 
 
             {
                 return false; // Retourne faux si le coup est invalide
+                //en gros cela permet , si mauvais coordonnée de recommencer le coup ( cette fonciton ne gére que les execption hors grille qui sont des entier)
             }
 
             grille[l, c] = joueur; // Met le numéro du joueur dans la case choisie
@@ -172,7 +183,7 @@ namespace Morpion // nom du truc
 
             for (int i = 0; i < 3; i++) // Vérifie chaque ligne
                                         // Boucle, int i = 0 (initialise varibale i a 0),
-                                        // i < 3 (c la condition pour que la boucle continue, tant que 1 est plus petit que 3 la boucle continue 
+                                        // i < 3 (c la condition pour que la boucle continue, tant que 1 est plus petit que 3 la boucle continue) c un compte tour si 3 symbole identique win. 
                                         // i++ ajouter 1 a i
                                         //Pour résumer quand i atteint 3 la boucle se stop 
             {
@@ -180,7 +191,7 @@ namespace Morpion // nom du truc
 
                 if (grille[i, 0] == joueur)
                 //grille[i, 0] : regarde la case a la ligne i et colone 0
-                //== joueur : compare la case avec la valeur du joueur ( O, X ou rien)
+                //== joueur : compare la case avec la valeur du joueur ( O, X ou rien) donc 1,2,0
                 //vérif si c vrai , vérifier le 2éme , puis si c vrai vérifier le 3éme 
 
                 {
@@ -212,7 +223,7 @@ namespace Morpion // nom du truc
             //explication fonctionnement au dessus
             for (int j = 0; j < 3; j++) // Vérifie chaque colonne
                                         // Boucle, int i = 0 (initialise varibale i a 0),
-                                        // i < 3 (c la condition pour que la boucle continue, tant que 1 est plus petit que 3 la boucle continue 
+                                        // i < 3 (c la condition pour que la boucle continue, tant que 1 est plus petit que 3 la boucle continue )  c un compte tour si 3 symbole identique win.
                                         // i++ ajouter 1 a i
                                         //Pour résumer quand i atteint 3 la boucle se stop 
             {
@@ -299,13 +310,13 @@ namespace Morpion // nom du truc
 
             for (int i = 0; i < 3; i++) // Initialise la grille avec une valeur 10 pour indiquer que toutes les cases sont vides
                                         // Boucle, int i = 0 (initialise varibale i a 0),
-                                        // i < 3 (c la condition pour que la boucle continue, tant que i est plus petit que 3 la boucle continue 
+                                        // i < 3 (c la condition pour que la boucle continue, tant que i est plus petit que 3 la boucle continue )  c un compte tour si 3 symbole identique win.
                                         // i++ ajouter 1 a i
                                         //Pour résumer quand i atteint 3 la boucle se stop 
                 for (int j = 0; j < 3; j++)
                     // Boucle pour parcourir les colonnes
                     // int j = 0 ( instaure j et le met a 0)
-                    // j < 3 ( tant que j est plus petit que 3 boucle continue 
+                    // j < 3 ( tant que j est plus petit que 3 boucle continue )  c un compte tour si 3 symbole identique win.
                     // j++ ( incrémentation de j de 1)
 
 
@@ -349,13 +360,17 @@ namespace Morpion // nom du truc
                                                                          // Demande la ligne et la colonne
 
 
+               
+
+
+
                 Console.Write("Ligne de 1 à 3 : "); // quelle ligne ? 
                 l = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2,
 
                 Console.Write("Colonne de 1 à 3 : "); // quelle colone ?
                 c = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur , fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2
 
-
+               
 
 
 
@@ -368,7 +383,7 @@ namespace Morpion // nom du truc
                     {
                         AfficherMorpion(); // Affiche la grille finale 
                         Console.WriteLine($"Le joueur {joueur} gaggne ");
-                        gagner = true; // Arrête le jeu
+                        gagner = true; // Arrête le jeu car le joueur a gagner (condition gagner vérifier)
                     }
                     else if (essais == 9) // Sinombre essais atteint 9 sans gagnant
                     {
@@ -392,19 +407,34 @@ namespace Morpion // nom du truc
                 }
                 else
                 {
-                    Console.WriteLine("pas bon mouv"); // Message d'erreur si le coup est invalide
+                    Console.WriteLine("pas bon mouvement"); // Message d'erreur si le coup est invalide
                                                        // c le sinon du coup invalide (pa bon )
 
 
                 }
+
+
+                
             }
 
 
-
+           
 
             Console.WriteLine("Fin"); // Message fin
-            Console.ReadKey(); //touche random pr close
-        }//fin prog principale 
+            //Console.ReadKey(); //touche random pr close
+
+            Console.WriteLine("            ");
+            Console.WriteLine("            ");
+            Console.WriteLine("Apuyer sur une touche pour fermer");
+            Console.WriteLine("            ");
+            Console.WriteLine("            ");
+            Console.WriteLine("            ");
+        }
+        //Console.ReadKey();
+        //fin prog principale 
+    
+    
+    
     }
 }
 
