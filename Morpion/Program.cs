@@ -1,5 +1,5 @@
 ﻿
-// j'ai pris les liberté de ne pas suvire toute les guide donné initialement, notament car il est demandé de rendre le morpion fonctionelle et je cite "MAINTENANCE CORRECTIVE ET/OU EVOLUTIVE".
+// j'ai pris les liberté de ne pas suvire totalement toute les guide donné initialement, notament car il est demandé de rendre le morpion fonctionelle et je cite "MAINTENANCE CORRECTIVE ET/OU EVOLUTIVE".
 
 using System;
 
@@ -59,7 +59,7 @@ namespace Morpion // nom du truc
                                            // if ( si la case correspond a 1 , faire se qu'il ya en dessous
                                            // si la case est 1 cela veut donc dire que c le joueur O qui a mis sont signe, si c 2 c le joueur X qui a mis
                                            //sont signe , et 0 ya rien 
-                        
+
                         Console.Write(" O "); //c le joueur 1
 
 
@@ -74,16 +74,16 @@ namespace Morpion // nom du truc
                                                 // si la case est 2 cela veut donc dire que c le joueur X qui a mis sont signe, si c 1 c le joueur O qui a mis
                                                 //sont signe , et 0 ya rien 
 
-                        
+
                         Console.Write(" X "); // c le joueur 2
 
 
 
 
                     else // Sinon, laisse la case vide
-                     Console.Write("   "); //et donc sa marque rien qui mis comme un espace ( qui vaut 0 de base) le rien vaut 0 donc le tableau de base est : 0 0 0 
-                     //                                                                                                                                        0 0 0
-                     //                                                                                                                                        0 0 0
+                        Console.Write("   "); //et donc sa marque rien qui mis comme un espace ( qui vaut 0 de base) le rien vaut 0 donc le tableau de base est : 0 0 0 
+                                              //                                                                                                                                        0 0 0
+                                              //                                                                                                                                        0 0 0
 
 
 
@@ -108,7 +108,7 @@ namespace Morpion // nom du truc
                            // si condition vérifier , passe en dessou
 
 
-                    
+
 
                     Console.WriteLine(" -----------"); // met -----------
             }
@@ -133,18 +133,18 @@ namespace Morpion // nom du truc
 
         {
             if (l < 0 || l > 2 || c < 0 || c > 2 || grille[l, c] != 0)  // ce if permet de vérifier tout les condition en meme temps
-                
-                
-                // Vérifie si la case est valide et vide                                                     
-                // l < 0 : vérif si ligne choisit par le joueur et inférieur a 0 , si oui invalid car hors grille                                                       
-                // l > 2 : vérif si ligne choisit par le joueur et supérieur a 2 , si oui invalid car hors grille                                                      
-                // c < 0 : vérif si la cologne choisit par le jouures est inférieur a 0 , si oui invalid car hors grille                                                      
-                // c > 2 : vérif si la cologne choisit par le joueur est supérieurs a 2 , si oui invalid car hors grille                                                    
-                // grille[l, c] != 10 : vérif si la case indiqué ne contient pas 10 ( 10 étant la valeur d'une case vide), si case na pas 10 sa veut dire quelle et prise                                                    
-                // grille[l, c] != 0 : vérif si la case indiqué ne contient pas 0 ( 0 étant la valeur d'une case vide), si case na pas 0 sa veut dire quelle et prise                                                    
-                // || : c un opérareur bool, c un moyen de dire que si un de ces truc est vrai hop invalid
 
-                //* la grille et de 0 a 2 , non pas de 1 a 3 , c'est pourquoi je vérif inférieur a 0 et supérieur a 2 etc 
+
+            // Vérifie si la case est valide et vide                                                     
+            // l < 0 : vérif si ligne choisit par le joueur et inférieur a 0 , si oui invalid car hors grille                                                       
+            // l > 2 : vérif si ligne choisit par le joueur et supérieur a 2 , si oui invalid car hors grille                                                      
+            // c < 0 : vérif si la cologne choisit par le jouures est inférieur a 0 , si oui invalid car hors grille                                                      
+            // c > 2 : vérif si la cologne choisit par le joueur est supérieurs a 2 , si oui invalid car hors grille                                                    
+            // grille[l, c] != 10 : vérif si la case indiqué ne contient pas 10 ( 10 étant la valeur d'une case vide), si case na pas 10 sa veut dire quelle et prise                                                    
+            // grille[l, c] != 0 : vérif si la case indiqué ne contient pas 0 ( 0 étant la valeur d'une case vide), si case na pas 0 sa veut dire quelle et prise                                                    
+            // || : c un opérareur bool, c un moyen de dire que si un de ces truc est vrai hop invalid
+
+            //* la grille et de 0 a 2 , non pas de 1 a 3 , c'est pourquoi je vérif inférieur a 0 et supérieur a 2 etc 
 
 
 
@@ -303,7 +303,8 @@ namespace Morpion // nom du truc
             int joueur = 1; // declare le joueur actuel (1 ou 2)
             int essais = 0; // compte nombre coups jouer
             bool gagner = false; // indique si joueur gagner
-            int l, c; // cordonnees du coup
+            int l; 
+            int c; // cordonnees du coup
 
 
 
@@ -360,24 +361,93 @@ namespace Morpion // nom du truc
                                                                          // Demande la ligne et la colonne
 
 
-               
 
 
 
-                Console.Write("Ligne de 1 à 3 : "); // quelle ligne ? 
+
+                /*
+                Console.Write("Colonne de 1 à 3 : ");
+                string input1 = Console.ReadLine(); //Console.. :métohde qui attend utilisateur rentre texte 
+                                                    //
+
+                if (int.TryParse(input1, out int temp1)) // int.TryParse : vérif si sa peut etre un entier 
+                                                       // si c bon , c stocké dans out int temp
+                                                       // donc si on met chiffre = true , si on met des lettre fals
+                {
+                    if (temp1 >= 1 && temp1 <= 3) //valeur temp est temporaire et permert de stocker une valeur
+                    {
+                        c = temp1 - 1; //le -1 du tableau et tt ( 0.1.2)
+                    }
+                    else
+                    {
+                        Console.WriteLine("La colonne doit être entre 1 et 3.");
+                        // pas bon car doit etre en 1 et 3
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Entrée invalide. Veuillez saisir un nombre.");
+                    // pas bon car pas 1.2.3
+                }
+
+
+                
+                
+                Console.Write("Ligne de 1 à 3 : ");
+                string input2 = Console.ReadLine(); //Console.. :métohde qui attend utilisateur rentre texte 
+                                                    //
+
+                if (int.TryParse(input2, out int temp2)) // int.TryParse : vérif si sa peut etre un entier 
+                                                             // si c bon , c stocké dans out int temp
+                                                             // donc si on met chiffre = true , si on met des lettre fals
+                {
+                    if (temp2 >= 1 && temp2 <= 3) //valeur temp est temporaire et permert de stocker une valeur
+                    {
+                        c = temp2 - 1; //le -1 du tableau et tt ( 0.1.2)
+                    }
+                    else
+                    {
+                        Console.WriteLine("La colonne doit être entre 1 et 3.");
+                        // pas bon car doit etre en 1 et 3
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Entrée invalide. Veuillez saisir un nombre.");
+                    // pas bon car pas 1.2.3
+                }
+               */
+
+
+
+               Console.Write("Ligne de 1 à 3 : "); // quelle ligne ? 
                 l = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2,
+               // try
+               // {
+               // l = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2,
+               // } 
+               // catch ((l >= 1 && l <= 3)   )
+
+
+
+
+
+
+
+
 
                 Console.Write("Colonne de 1 à 3 : "); // quelle colone ?
                 c = int.Parse(Console.ReadLine()) - 1; // prend le chiffre mis par l'utilisateur , fait -1 car sinon sa décal tt, le tableau c pas 1.2.3 mais 0.1.2
 
-               
+
 
 
 
                 // Si le coup est valide, jouer
-                if (AJouer(l, c, joueur))
+                if (AJouer(c, l, joueur))
                 {
                     essais++; // compte tour ( si  9 la parti de stop)
+
 
                     if (Gagner(joueur)) // Si joueur gagne alors : 
                     {
@@ -408,17 +478,16 @@ namespace Morpion // nom du truc
                 else
                 {
                     Console.WriteLine("pas bon mouvement"); // Message d'erreur si le coup est invalide
-                                                       // c le sinon du coup invalide (pa bon )
 
 
                 }
 
 
-                
+
             }
 
 
-           
+
 
             Console.WriteLine("Fin"); // Message fin
             //Console.ReadKey(); //touche random pr close
@@ -432,9 +501,9 @@ namespace Morpion // nom du truc
         }
         //Console.ReadKey();
         //fin prog principale 
-    
-    
-    
+
+
+
     }
 }
 
